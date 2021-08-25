@@ -7,12 +7,9 @@ namespace TestProject2
     public class UnitTest1
     {
         [TestMethod]
-        [DataRow(2001,false)]
-        [DataRow(1996, true)]
-        [DataRow(1900, false)]
-        [DataRow(2000, true)]
 
-        public void Year_2001_Is_not_a_leap_year(int yr,bool ex)
+
+        public void Year_2001_Is_not_a_leap_year()
 
         {
 
@@ -22,12 +19,75 @@ namespace TestProject2
 
 
             // Act
+             var expected = false;
 
-            var actual = p.IsItALeapYear(yr);
+            var actual = p.IsItALeapYear(2001);
 
             // Assert
 
-            Assert.AreEqual(ex, actual);
+              Assert.AreEqual(expected, actual);
+        }
+        
+        [TestMethod]
+        public void Year_1996_Is_not_a_leap_year()
+
+        {
+
+            // Arrange
+
+            var p = new Program();
+
+            var expected = false;
+
+            // Act
+
+            var actual = p.IsItALeapYear(1996);
+
+            // Assert
+
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Year_1900_Is_not_a_leap_year()
+
+        {
+
+            // Arrange
+
+            var p = new Program();
+
+            var expected = false;
+
+            // Act
+
+            var actual = p.IsItALeapYear(1900);
+
+            // Assert
+
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Year_2000_Is_not_a_leap_year()
+
+        {
+
+            // Arrange
+
+            var p = new Program();
+
+            var expected = false;
+
+            // Act
+
+            var actual = p.IsItALeapYear(2000);
+
+            // Assert
+
+            Assert.AreEqual(expected, actual);
 
         }
     }
